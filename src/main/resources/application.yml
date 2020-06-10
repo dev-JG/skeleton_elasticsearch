@@ -1,0 +1,23 @@
+server:
+  error:
+    include-stacktrace: always
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  profiles:
+    active: desk
+
+  application:
+    name: skeleton_elasticsearch
+
+
+
+---
+spring:
+  profiles: local
+
+---
+spring:
+  profiles: desk
