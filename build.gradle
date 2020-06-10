@@ -19,8 +19,13 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-data-elasticsearch'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    implementation 'org.elasticsearch:elasticsearch:6.8.10'
+    implementation 'org.elasticsearch.client:elasticsearch-rest-high-level-client:6.8.10'
+
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     annotationProcessor 'org.projectlombok:lombok'

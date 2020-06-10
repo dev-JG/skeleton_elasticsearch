@@ -12,6 +12,10 @@ spring:
   application:
     name: skeleton_elasticsearch
 
+elasticsearch:
+  host: 192.168.136.128
+  port: 5601
+  cluster: elasticsearch
 
 
 ---
