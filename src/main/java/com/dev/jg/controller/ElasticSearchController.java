@@ -26,8 +26,13 @@ public class ElasticSearchController {
     }
 
     @GetMapping("create")
-    public void create(){
-        elasticSearchService.create();
+    public boolean create(){
+        return elasticSearchService.create();
+    }
+
+    @GetMapping("exists")
+    public boolean exists(){
+        return elasticSearchService.exists();
     }
 
     @GetMapping("search")

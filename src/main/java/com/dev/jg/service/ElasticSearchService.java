@@ -4,5 +4,7 @@ public interface ElasticSearchService {
 
     boolean create();
 
+    boolean exists();
+
     void search();
 }
