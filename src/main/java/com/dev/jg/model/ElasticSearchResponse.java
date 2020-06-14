@@ -1,17 +1,15 @@
 package com.dev.jg.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import org.elasticsearch.search.SearchHits;
 import org.elasticsearch.search.aggregations.Aggregations;
-
-import java.util.List;
 
 @Data
 @Builder
 @AllArgsConstructor
 public class ElasticSearchResponse {
-
-    private List<Product> searchHits;
 
     private String scrollId;
 
@@ -23,28 +21,9 @@ public class ElasticSearchResponse {
 
     private Aggregations aggregations;
 
-    @Setter
-    @Getter
-    @AllArgsConstructor
-    @JsonIgnoreProperties(ignoreUnknown = true)
-    public static class Product {
-        private String index;
-        private String type;
-        private String id;
-        private long score;
-        private Source sourceAsMap;
-    }
+    private long totalHits;
 
-    @Setter
-    @Getter
-    @AllArgsConstructor
-    @JsonIgnoreProperties(ignoreUnknown = true)
-    public static class Source {
-        private String currency;
-        private String customerFirstName;
-        private String customerLastName;
-        private String customerFullName;
-        private String customerGender;
-        private String customerId;
-    }
+    private long searchHitSize;
+
+    private SearchHits searchHits;
 }
