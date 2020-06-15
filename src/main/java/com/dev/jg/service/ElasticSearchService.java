@@ -1,5 +1,6 @@
 package com.dev.jg.service;
 
+import com.dev.jg.model.BaseDocument;
 import com.dev.jg.model.ElasticSearchResponse;
 import org.elasticsearch.action.admin.indices.flush.FlushResponse;
 import org.elasticsearch.action.search.ClearScrollResponse;
@@ -21,4 +22,6 @@ public interface ElasticSearchService {
     ElasticSearchResponse searchScroll(String scrollId);
 
     ClearScrollResponse scrollClear(String scrollId);
+
+    BaseDocument getDocument(String docId, Class returnType);
 }

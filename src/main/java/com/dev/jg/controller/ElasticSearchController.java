@@ -1,5 +1,6 @@
 package com.dev.jg.controller;
 
+import com.dev.jg.model.BaseDocument;
 import com.dev.jg.model.ElasticSearchResponse;
 import com.dev.jg.service.ElasticSearchService;
 import lombok.RequiredArgsConstructor;
@@ -71,5 +72,11 @@ public class ElasticSearchController {
     public ClearScrollResponse scrollClear(
             @RequestParam(defaultValue = "") String scrollId){
         return elasticSearchService.scrollClear(scrollId);
+    }
+
+    @GetMapping("document")
+    public BaseDocument getDocument(
+            @RequestParam(defaultValue = "s20gj3IBUpV-rI_RkxWr") String docId){
+        return elasticSearchService.getDocument(docId, BaseDocument.class);
     }
 }
